@@ -110,8 +110,11 @@ Le :blue:`fasi di analisi e progetto` anche se accuratamente svolte, non sempre 
 e *quasi mai corralete in modo sistematico con il codice prodotto*.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Il processo di costruzione del software è quindi :blue:`influenzato da una potente forza`, 
 =======
+=======
+>>>>>>> 95ce49fbba3655dd0a4cb3fc7085d0d9c5843c53
 ++++++++++++++++++++++++++++++++++++++++++
 Sviluppo bottomUp
 ++++++++++++++++++++++++++++++++++++++++++
@@ -321,35 +324,34 @@ focalizzando l'attenzione su almeno tre diversi punti di vista:
 Questi punti di vista costituiscono tre indispensabili dimensioni in cui articolare lo spazio della descrizione 
 del sistema, qualunque sia il linguaggio utilizzato per esprimere questa descrizione.
 <<<<<<< HEAD
+<<<<<<< HEAD
 Costrutti per esprimere strutture (di dati e di controllo), forme di comportamento e meccanismi di interazione 
 sono presenti in tutti i `Linguaggi di programmazione`_.
-
-Un punto importante consiste nel capire fino a che punto i costrutti di un linguaggio debbano influenzare 
-il progettista (se non lo stesso analista). 
-Fino alla fine degli anni 90 il linguaggio di programmazione è stato il veicolo principale per introdurre 
-nuovi concetti sia sul piano computazionale sia sul sul piano della organizzazione del software.
-
-La figura che segue mostra una visione sintetica dello sviluppo nel tempo di questa evoluzione linguistica,
-con riferimento ad alcuni dei linguaggi più noti (in `Linguaggi di programmazione`_ si dice che oggi
-si usano più di 2500 linguaggi di programmazione).
-
-.. image:: ./_static/img/Intro/historyHLPL.png 
-   :align: center
-   :width: 60%
+=======
+>>>>>>> 95ce49fbba3655dd0a4cb3fc7085d0d9c5843c53
 
 
-L'avvento della programmazione ad oggetti sembra avere segnato il culmine di questo processo; 
-un motivo può certo essere il raggiungimento di una sufficiente maturità nella capacità espressiva 
-in ciascuna delle dimensioni citate. 
 
+
+++++++++++++++++++++++++++++++++++++++++++++++
+Struttura
+++++++++++++++++++++++++++++++++++++++++++++++
+
+<<<<<<< HEAD
 Tuttavia, il motivo principale di una relativa (e solo apparente) 
 stagnazione nello sviluppo di nuovi linguaggi, può essere ricondotto all'idea che un linguaggio 
 non deve essere necessariamente accompagnato da una sintassi concreta ma può essere sufficiente 
 definire una **sintassi astratta** utilizzando un :blue:`meta-linguaggio` come ad esempio ``MOF``
 (si veda `Meta Object Facility`_) unitamente alla semantica del linguaggio e a un framework di supporto.
+=======
+Dal punto di vista strutturale, le *funzioni* (o le *procedure*) e gli *oggetti* costituiscono componenti fondamentali,
+largamente in uso  nei programmi non distribuiti, anche di piccole dimensioni. 
+Nel seguito,  cercheremo di rappresentare ciascuno di essi con una forma grafica convenzionale, come ad esempio:
+>>>>>>> 95ce49fbba3655dd0a4cb3fc7085d0d9c5843c53
 
-.. image:: ./_static/img/Intro/mofUml.PNG 
+.. image:: ./_static/img/Architectures/legendBasicComponents.PNG 
    :align: center
+<<<<<<< HEAD
    :width: 80%
 
 =======
@@ -389,6 +391,29 @@ dei suoi componenti, quali ad esempio:
 - quali :blue:`proprietà (attributi)` caratterizzano il componente?
 - da quali altri componenti dipende e secondo quale :blue:`tipo di dipendenza`?
 
+=======
+   :width: 25%
+
+Nel contesto di un sistema software distribuito, componenti-base come le funzioni si trovano all'interno di altri 
+componenti, che possiamo qui indicare genericamente come  :blue:`macro-componenti`.
+Anche per questi, è opportuno introdurre una forma grafica convenzionale, come, ad esempio:
+
+.. image:: ./_static/img/Architectures/legendComponets.PNG 
+   :align: center
+   :width: 25%
+
+Per impostare in modo sistematico la definizione a livello strutturale di un sistema è conveniente, 
+sia in fase di analisi sia in fase di progetto, cercare di dare risposta ad alcune domande relative alla natura
+dei suoi componenti, quali ad esempio:
+
+- il componente è :blue:`attivo` (dotato di un proprio flusso di controllo)? Se il componente non ha
+  flusso di controllo autonomo, noi diremo che è un :blue:`oggetto`.
+- il componente è :blue:`atomico o composto`? Nel caso sia composto quali sono le parti che lo formano?
+- il componente è dotato di :blue:`stato modificabile`? In caso affermativo, quali sono le operazioni di modifica dello stato? 
+- quali :blue:`proprietà (attributi)` caratterizzano il componente?
+- da quali altri componenti dipende e secondo quale :blue:`tipo di dipendenza`?
+
+>>>>>>> 95ce49fbba3655dd0a4cb3fc7085d0d9c5843c53
 Si noti che un componente non atomico implica la *definizione ricorsiva della struttura di ogni parte* e 
 la definizione di operazioni denominate **selettori** che forniscono (riferimenti a) i componenti costituenti.
 
@@ -438,11 +463,16 @@ Nel seguito, faremo riferimento alla seguente terminologia:
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - **Messaggio** (:blue:`message`): termine generico per denotare informazione da trasmettere in rete.
 =======
 - **Messaggio** (:blue:`message`): termine generico per denotare informazione scambiata mediante
   l'uso di un opportuno supporto di comunicazione.
 >>>>>>> costruire refactored
+=======
+- **Messaggio** (:blue:`message`): termine generico per denotare informazione scambiata mediante
+  l'uso di un opportuno supporto di comunicazione.
+>>>>>>> 95ce49fbba3655dd0a4cb3fc7085d0d9c5843c53
 - **Dispaccio** (:blue:`dispatch`): messaggio inviato in modo asincrono a N (N>=1) specifici destinatari, 
   noti alla emittente, con l'aspettativa che questi lo ricevano e lo elaborino; l'emittente non si aspetta 
   alcuna informazione di ritorno.  
@@ -455,12 +485,17 @@ Nel seguito, faremo riferimento alla seguente terminologia:
   che questa attività si concluda con una risposta pertinente alla richiesta.
 - **Risposta** (:blue:`reply, response`): messaggio inviato da un destinatario al mittente di una richiesta.
 <<<<<<< HEAD
+<<<<<<< HEAD
   Il contenuto del messaggio rappresenta informazione pertinente alla richiesta.
 - **Evento** (:blue:`event`): messaggio emessa (più o meno consapevolmente) in modo asincrono da una sorgente 
 =======
   il contenuto del messaggio rappresenta informazione pertinente alla richiesta.
 - **Evento** (:blue:`event`): messaggio emesso (più o meno consapevolmente) in modo asincrono da una sorgente 
 >>>>>>> costruire refactored
+=======
+  il contenuto del messaggio rappresenta informazione pertinente alla richiesta.
+- **Evento** (:blue:`event`): messaggio emesso (più o meno consapevolmente) in modo asincrono da una sorgente 
+>>>>>>> 95ce49fbba3655dd0a4cb3fc7085d0d9c5843c53
   senza alcuna particolare nozione di destinatario e senza alcuna aspettativa da parte dell'emittente.
 - **Segnale** (:blue:`signal`): messaggio emesso in modo consapevole e asincrono a N (N>=1) destinatari, 
   noti o meno all'emittente, 
@@ -605,6 +640,7 @@ definire una **sintassi astratta** utilizzando un :blue:`meta-linguaggio` come a
    :width: 80%
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Va sottolineata, a questo punto, la distanza tra le mosse elementari di base e quelle necessarie per affrontare
 =======
 Questa idea è sviluppata oggi con riferimento ai `Domain Specific Languages`_.
@@ -614,6 +650,15 @@ Nella :ref:`FASE2` utilizzeremo la `Meta Object Facility`_ di UML2 nella version
 oggetti attivi (**attori**) che interagiscono tra loro a scambio di messaggi si comportano come `MooreMachines`_.
 
 
+=======
+Questa idea è sviluppata oggi con riferimento ai `Domain Specific Languages`_.
+
+Nella :ref:`FASE2` utilizzeremo la `Meta Object Facility`_ di UML2 nella versione incorporata in Eclipse
+(denominata `Ecore`_)  per definire un linguaggio che permette di esprimere sistemi software come
+oggetti attivi (**attori**) che interagiscono tra loro a scambio di messaggi si comportano come `MooreMachines`_.
+
+
+>>>>>>> 95ce49fbba3655dd0a4cb3fc7085d0d9c5843c53
 .. _abstractiongap:
 
 ++++++++++++++++++++++++++++++++++++++++++++++
@@ -622,7 +667,10 @@ Abstraction GAP e topDown
 
 Va sottolieata, a questo punto, la distanza tra le mosse di base fornite da un automa o da un linguaggio di 
 programmazione (general-purpose) e quelle necessarie per affrontare
+<<<<<<< HEAD
 >>>>>>> costruire refactored
+=======
+>>>>>>> 95ce49fbba3655dd0a4cb3fc7085d0d9c5843c53
 in modo adeguato un problema applicativo, una distanza cui faremo riferimento col termine :blue:`abstraction gap`.
 
 .. image:: ./_static/img/Intro/TopDownBottomUp.PNG
@@ -669,6 +717,7 @@ di tipo iterativo e incrementale.
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Esistono molti validi motivi per impostare il processo di produzione in modo :blue:`TopDown`
 (si veda :ref:`La crisi del software`), partendo dal problema e dalla sua
 analisi, in modo che le tecnologie più opportune per risolverlo siano un risultato di questa analisi
@@ -687,6 +736,8 @@ Sappiamo però che, in molti casi, si segue un approccio `bottomUp`_ e quindi po
 strategie migliori per invertire il processo e le motivazioni per fare questa inversione. 
 =======
 >>>>>>> costruire refactored
+=======
+>>>>>>> 95ce49fbba3655dd0a4cb3fc7085d0d9c5843c53
 
 Supponendo che le nostre attività di laboratorio siano non troppo dissimili a quanto avviene concretamente nel
 mondo del lavoro, faremo riferimento a `SCRUM`_ che oggi costituisce un diffuso framework per lo sviluppo e il 
@@ -824,9 +875,15 @@ il committente
 Al termine della analisi dei requisiti e del problema dovrebbe essere definito 
 un modello del sistema che mette in luce i macro-componenti 
 e le loro interazioni, cioè una prima :blue:`architettura logica` del sistema.
+<<<<<<< HEAD
 
 
 
+=======
+
+
+
+>>>>>>> 95ce49fbba3655dd0a4cb3fc7085d0d9c5843c53
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 L'architettura logica
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -923,6 +980,57 @@ Sul problema del testing si trova moltissimo materiale in rete. Riportiamo qui a
 - `JUnit FAQ`_
 
 
+
++++++++++++++++++++++++++
+Il testing
++++++++++++++++++++++++++
+
+L’obiettivo della fase di testing è quello di trovare il maggior numero di situazioni che conducono ad errori 
+con il minimo numero di casi di prova. 
+Un  piano di testing  ha di solito lo scopo di stabilire la gerarchia con cui i test vanno eseguiti, 
+i metodi di esecuzione, i criteri di accettazione e prevede diverse tipologie di test, tra cui:
+
+
+- **Unit test** (Test di unità o di modulo)
+  Ha l’obiettivo di individuare gli errori nel singolo modulo software. 
+ 
+- **Integration Test** (Test di integrazione)
+  Ha l’obiettivo di individuare gli errori nel software quando tutti i moduli che compongono un sottosistema 
+  o l’intero sistema vengono fatti lavorare assieme. 
+
+- **System Test** (Test di sistema)
+  Ha l’obiettivo di garantire che il prodotto software nel suo complesso soddisfi completamente 
+  i requisiti iniziali. E' un collaudo interno. 
+
+- **User Acceptance Test** (Test di accettazione)
+  Ha l’obiettivo di valutare la rispondenza dell’applicazione software rispetto ai requisiti 
+  espressi inizialmente nel contratto e di ottenere l’accettazione formale del cliente di quanto realizzato. 
+  Il test viene effettuato dal cliente nel suo ambiente di test, e da un gruppo di utenti. 
+
+- **Alpha test e Beta test**
+  Un :blue:`alpha test` è un test preliminare di un’applicazione software anche non ancora completa, 
+  eseguito da alcuni potenziali utenti rappresentati da un team. 
+
+  Un :blue:`beta test` ha l’obiettivo di far valutare al cliente, prima della distribuzione ufficiale del sistema, 
+  la reale funzionalità, completezza ed operatività dell’applicazione. 
+  
+- **Regression Test** (test di non regressione)
+  Ha l’obiettivo di verificare a valle di una manutenzione, dopo che un bug è stato individuato e corretto 
+  e sono stati eseguiti esattamente gli stessi test che erano stati effettuati quando era stato individuato il problema.
+
+- **Stress test** (test di carico)
+  Ha l’obiettivo di determinare il punto di rottura di un sistema software, 
+  oltre il quale si verificano instabilità del sistema, perdita dei dati o interruzione del servizio.
+
+
+Sul problema del testing si trova moltissimo materiale in rete. Riportiamo qui alcuni riferimenti utili sul 'piano pragmatico':
+
+- `Software testing`_ (wikipedia)
+- `Software testing quotes`_
+- `Automated-Testing-Plan FAQ`_
+- `JUnit FAQ`_
+
+
 ++++++++++++++++++++++++++++++++
 Dal testing a DevOps
 ++++++++++++++++++++++++++++++++
@@ -943,8 +1051,13 @@ Il *test continuo* è parte dell'approccio `DevOps`_, in cui sviluppo e operazio
 per l'intero ciclo di vita del prodotto. L'obiettivo è quello di accelerare la fornitura del software, 
 bilanciando al tempo stesso i costi, la qualità e i rischi.   
 
+<<<<<<< HEAD
 Noi porremo particolare attenzione al fatto che la definizione di test (automatizzabili) può essere vista come
 la formalizzazione delle `User Stories`_ e che l'uso dei modelli (eseguibili) può permettere 
+=======
+Noi porremo particolare attenzione al fatto che la definizione di test (autmatizzabili) può essere vista come
+la **formalizzazione** delle `User Stories`_  e che l'uso dei modelli (esguibili) può permettere 
+>>>>>>> 95ce49fbba3655dd0a4cb3fc7085d0d9c5843c53
 di anticipare questa formalizzazione fin dalle fasi di analisi.
 
 Nella fase di analisi, l'obiettivo non è quello di eseguire dei test, ma quello di trovare il modo migliore 
